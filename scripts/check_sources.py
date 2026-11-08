@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """Read-only compatibility checks against a firmware checkout; no device access."""
-import hashlib
 import json
 import re
 import subprocess
 import sys
 from pathlib import Path
-from generate_keymap import ROOT, LAYERS, outputs
+
+ROOT = Path(__file__).resolve().parents[1]
 
 REL = Path('keyboards/keebart/corne_mx_pro/keymaps/studio')
 
@@ -19,19 +19,14 @@ def main():
     fw = Path(sys.argv[1]).resolve()
     actual = subprocess.check_output(['git', '-C', str(fw), 'rev-parse', 'HEAD'], text=True).strip()
     print(f'Checking Keebart firmware commit: {actual}')
-    for name, expected in outputs().items():
-        require((ROOT / name).read_text() == expected, f'{name} differs from its reviewed source; run generate_keymap.py and review')
-    manifest = json.loads((ROOT / 'sources/provenance.json').read_text())
-    for name, digest in manifest['sha256'].items():
-        require(hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == digest, f'Source snapshot changed: {name}')
-    for name in ('rules.mk', 'vial.json'):
-        require((ROOT / REL / name).read_bytes() == (fw / REL / name).read_bytes(), f'Manufacturer {name} changed')
+    require((ROOT / REL / 'vial.json').read_bytes() == (fw / REL / 'vial.json').read_bytes(), 'Manufacturer vial.json changed')
+    rules_suffix = '\n# User-approved initialization; all Studio processing stays in manufacturer modules.\nSRC += defaults.c\n'
+    require((ROOT / REL / 'rules.mk').read_text() == (fw / REL / 'rules.mk').read_text() + rules_suffix, 'Expected stock Studio rules plus defaults.c only')
     require((ROOT / REL / 'config.h').read_text().startswith((fw / REL / 'config.h').read_text()), 'Manufacturer config prefix changed')
     config = (ROOT / REL / 'config.h').read_text()
     require(len(re.findall(r'^#define TAPPING_TERM 250$', config, re.M)) == 1, 'Unexpected initial tapping term')
     require(not re.search(r'^#\s*(?:define|undef)\s+(?:DYNAMIC_KEYMAP_LAYER_COUNT|VIAL_INSECURE|VIA_EEPROM_BUILD_ID)', config[len((fw / REL / 'config.h').read_text()):], re.M), 'Storage ABI or unlock was overridden')
     require('#define DYNAMIC_KEYMAP_LAYER_COUNT 16' in (fw / 'keyboards/keebart/corne_mx_pro/config.h').read_text(), 'Expected 16-layer manufacturer ABI')
-    data = json.loads((ROOT / 'docs/mapping.json').read_text())
     layout = json.loads((fw / 'keyboards/keebart/corne_mx_pro/info.json').read_text())['layouts']['LAYOUT_split_3x6_3_ex2']['layout']
     # Explicit electrical mapping, independent of the converter and coordinate heuristics.
     expected = ([[0,c] for c in range(7)] + [[4,c] for c in range(6,-1,-1)] +
@@ -39,27 +34,52 @@ def main():
                 [[2,c] for c in range(6)] + [[6,c] for c in range(5,-1,-1)] +
                 [[3,c] for c in range(3,6)] + [[7,c] for c in range(5,2,-1)])
     require([k['matrix'] for k in layout] == expected, '46-position physical/electrical layout changed')
-    require(len(data) == 368 and len(set(map(tuple, expected))) == 46, 'Incorrect key count')
-    layers = {name: [c for c in data if c['layer'] == name] for name in LAYERS}
-    for name, cells in layers.items():
-        require([c['position'] for c in cells] == list(range(46)), f'Position order: {name}')
-        require(all(cells[p]['qmk'] == 'KC_NO' for p in (6,7,20,21)), f'Unexpected extra switch binding: {name}')
-    # Every populated layer has an explicit entry, and NUMPAD retains its exit toggle.
-    for layer, pos, code in [('macos',0,'LT(SYS, KC_GRV)'), ('macos',13,'LT(SYS, KC_BSLS)'),
-                             ('macos',40,'LT(NAV, KC_ESC)'), ('macos',41,'LT(NUM, KC_BSPC)'),
-                             ('macos',42,'LT(WIN, KC_TAB)'), ('macos',43,'LT(NUMPAD, KC_ENT)'),
-                             ('macos',44,'LT(SYM, KC_SPC)'), ('macos',45,'MO(SHORT)'),
-                             ('sym',33,'TG(NUMPAD)'), ('numpad',33,'TG(NUMPAD)')]:
-        require(layers[layer][pos]['qmk'] == code, f'Layer reachability changed: {layer}:{pos}')
-    for p, code in [(28,'QK_RBT'),(29,'QK_BOOT'),(30,'EE_CLR'),(37,'EE_CLR'),(38,'QK_BOOT'),(39,'QK_RBT')]:
-        require(layers['sys'][p]['qmk'] == code, f'Mirrored SYS action missing: {p}')
-    require(all(c['qmk'] not in ('EE_CLR','QK_BOOT','QK_RBT') for c in data if c['layer'] != 'sys'), 'System action escaped held SYS')
-    require(all(c['qmk'] == 'KC_NO' for c in data if c['zmk'] in ('&kp C_VOICE_COMMAND','&kp C_PWR')), 'Unsupported HID usage replaced silently')
-    for source in (ROOT / 'keyboards').rglob('*.c'):
-        # This project must contain data only; catch callbacks, helper functions and includes.
+    require(len(layout) == 46 and len(set(map(tuple, expected))) == 46, 'Incorrect physical key count')
+    # Keymap shape, layer entries and protected actions are checked against the
+    # actual compiled C arrays by tests/run.py; no second binding source is used.
+    # The approved exception is initial configuration, not a replacement event engine.
+    hooks = {'via_init_kb', 'eeconfig_init_user', 'keyboard_post_init_user'}
+    for name, source in [('via_init_kb','quantum/via.c'),('eeconfig_init_user','quantum/eeconfig.c'),('keyboard_post_init_user','quantum/keyboard.c')]:
+        require(re.search(r'__attribute__\(\(weak\)\)\s+void\s+' + name + r'\(', (fw / source).read_text()), f'{name} is no longer a weak default')
+    require(re.search(r'\bkeyboard_post_init_user\s*\(\s*\)\s*;', (fw / 'keyboards/keebart/common/studio_rgb_qmk.c').read_text()), 'Studio no longer chains user initialization')
+    # Discover the current Studio source/include graph instead of pinning files
+    # by hash. This is a conservative text check, not a C preprocessor or proof
+    # of complete runtime compatibility.
+    common = (fw / 'keyboards/keebart/common').resolve()
+    pending = []
+    for name in ('studio_rgb.mk', 'studio_test.mk'):
+        pending += [fw / source for source in re.findall(r'keyboards/keebart/common/[\w/]+\.c', (common / name).read_text())]
+    require(pending, 'No Studio sources found in manufacturer rules')
+    checked = set()
+    while pending:
+        source = pending.pop().resolve()
+        if source in checked:
+            continue
+        checked.add(source)
         content = source.read_text()
-        require(not re.search(r'\b(?:bool|void|uint\w*|layer_state_t|char)\s+\w+\s*\([^;{}]*\)\s*\{', content), f'Custom firmware function found: {source}')
-        require(re.findall(r'^#include\s+(.+)$', content, re.M) == ['QMK_KEYBOARD_H'], f'Unexpected code inclusion: {source}')
+        definitions = set(re.findall(r'\bvoid\s+(\w+)\s*\([^;{}]*\)\s*\{', content))
+        require(not (definitions & hooks), f'Studio source now owns an initialization hook: {source.relative_to(fw)}')
+        for include in re.findall(r'^\s*#\s*include\s+"([^"]+)"', content, re.M):
+            for candidate in (source.parent / include, common / include):
+                candidate = candidate.resolve()
+                if candidate.is_file() and common in candidate.parents and candidate.suffix in ('.c','.h','.inc'):
+                    pending.append(candidate)
+                    break
+    settings = (fw / 'quantum/qmk_settings.c').read_text()
+    for setting, field in [(7,'tapping_term'), (22,'QS_tapping_permissive_hold_bit'), (23,'QS_tapping_hold_on_other_key_press_bit'), (26,'QS_tapping_chordal_hold_bit')]:
+        pattern = (r'DECLARE_STATIC_SETTING\(\s*7\s*,\s*tapping_term\s*\)' if setting == 7 else
+                   rf'DECLARE_STATIC_BITSETTING\(\s*{setting}\s*,\s*tapping_v2\s*,\s*{field}\s*\)')
+        require(re.search(pattern, settings), f'Initialization setting ID {setting} changed meaning')
+    require({s.name for s in (ROOT / REL).glob('*.c')} == {'keymap.c','defaults.c'}, 'Unreviewed keymap source added')
+    for source in (ROOT / 'keyboards').rglob('*.c'):
+        content = source.read_text()
+        definitions = re.findall(r'\b(?:bool|void|uint\w*|layer_state_t|char)\s+(\w+)\s*\([^;{}]*\)\s*\{', content)
+        expected_functions = hooks if source == ROOT / REL / 'defaults.c' else set()
+        require(set(definitions) == expected_functions and len(definitions) == len(expected_functions), f'Unapproved firmware function found: {source}')
+        includes = ['QMK_KEYBOARD_H', '"layers.h"']
+        if source.name == 'defaults.c':
+            includes += ['"qmk_settings.h"', '"via.h"', '"vial.h"', '"dynamic_keymap.h"']
+        require(re.findall(r'^#include\s+(.+)$', content, re.M) == includes, f'Unexpected code inclusion: {source}')
     keymap = (ROOT / REL / 'keymap.c').read_text()
     keycodes = ((fw / 'quantum/keycodes.h').read_text() + (fw / 'quantum/quantum_keycodes.h').read_text()
                 + (fw / 'quantum/keymap_extras/keymap_us.h').read_text())
@@ -67,10 +87,9 @@ def main():
         # MOD_* bit masks live in the standard report header.
         definitions = keycodes + (fw / 'tmk_core/protocol/report.h').read_text()
         require(re.search(r'\b' + token + r'\b', definitions), f'Unknown keycode: {token}')
-    require(len(re.findall(r'^    \[\d+\] = \{ENCODER_CCW_CW', keymap, re.M)) == 8, 'Encoder layer count must match the eight compiled keymap layers')
     submodules = subprocess.check_output(['git','-C',str(fw),'submodule','status','--recursive'],text=True)
     require(not any(line.startswith(('-', '+', 'U')) for line in submodules.splitlines()), 'Missing or mismatched firmware submodules; run git submodule update --init --recursive')
-    print('PASS: source snapshots, stock Studio modules/identity, 8 x 46 positions, layer entries, mirrored SYS, matching encoder layers / 16-layer ABI, known keycodes, no custom functions, submodules.')
+    print('PASS: stock Studio modules/identity, 46-position layout, 16-layer ABI, initialization hooks/chaining, setting IDs, submodules.')
     print('Firmware compilation and hardware/GUI validation are separate and are NOT certified by this check.')
 
 if __name__ == '__main__':

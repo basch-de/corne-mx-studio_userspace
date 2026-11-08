@@ -10,3 +10,6 @@ ifneq ($(findstring /mini,$(KEYBOARD)),)
 endif
 include keyboards/keebart/common/studio_rgb.mk
 include keyboards/keebart/common/studio_test.mk
+
+# User-approved initialization; all Studio processing stays in manufacturer modules.
+SRC += defaults.c

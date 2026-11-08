@@ -102,7 +102,9 @@ jobs:
       - name: Validate personal keymap compatibility with current firmware
         if: matrix.variant == 'personal'
         working-directory: firmware
-        run: python3 "$GITHUB_WORKSPACE/userspace/scripts/check_sources.py" .
+        run: |
+          python3 "$GITHUB_WORKSPACE/userspace/scripts/check_sources.py" .
+          python3 "$GITHUB_WORKSPACE/userspace/tests/run.py" .
 
       - name: Compile UF2 without device access
         working-directory: firmware

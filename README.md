@@ -4,21 +4,23 @@ Standardportierung der ZMK-Belegung der Corne Choc Pro BT auf
 `keebart/corne_mx_pro/standard` (RP2040, 46 Positionen).
 
 Die Konfiguration verwendet Keebarts originale Studio-Module und Vial.
-Eigene Firmware-Funktionen, Hooks und Änderungen an Hardware oder QMK-Kern sind
-nicht enthalten. Die Keymap heißt zwingend **`studio`**, weil der Hersteller
+Die freigegebene eigene Laufzeitlogik initialisiert ausschließlich vier
+Vial-Einstellungen und drei dynamische Tap Dances. Record- und Timing-Hooks
+sowie Hardware und QMK-Kern werden nicht ersetzt. Die Keymap heißt **`studio`**, weil der Hersteller
 mehrere Funktionen ausschließlich für diesen Namen einkompiliert.
 
-Stand 08.11.2026: **Quellen und Positionszuordnung geprüft; Firmware noch nicht
-kompiliert und nicht auf Hardware oder mit den GUIs getestet.** Die lokale
-Installation der Buildwerkzeuge wurde abgelehnt. Es wurden keine Firmware,
-EEPROM-Einstellungen oder Referenzprojekte verändert. Es wurde nichts gepusht
-und kein GitHub-Actions-Lauf gestartet.
+Stand 08.11.2026: **Alle drei Firmwarevarianten erfolgreich in GitHub Actions
+kompiliert; Hardware- und GUI-Tests stehen noch aus.**
+[Build #1](https://github.com/basch-de/corne-mx-studio_userspace/actions/runs/42480355588)
+lief für Userspace-Commit `bbf0e5e465c5394b94cc69a25f46160aa842537b` erfolgreich.
+Die drei UF2-Artefakte und drei Buildnachweise wurden hochgeladen. Es wurde
+keine Firmware auf die Tastatur übertragen und kein EEPROM-Reset durchgeführt.
+Danach wurden die rechte obere Außentaste auf Backslash zurückgestellt und die
+fehlenden Vial-Tasten samt Initialisierung übernommen. Für diesen aktuellen
+Stand bestehen Quellenprüfung und 38 Hosttests mit Keebarts Studio- und QMK-Tapping-Engine;
+ein neuer vollständiger Firmware-Build ist noch erforderlich.
 
-- [Analyse und Kompatibilitätsprüfung](docs/ANALYSIS.md)
-- [Vollständige Zuordnung aller 368 Bindings](docs/MAPPING.md)
-- [Abweichungsbericht und erste Einzelentscheidung](docs/DEVIATIONS.md)
-- [Validierungsstand und spätere Hardwareprüfung](docs/VALIDATION.md)
-- [Quellrevisionen und Prüfsummen](sources/provenance.json)
+- [Technische Hinweise, Initialisierung, Abweichungen und Prüfstand](docs/PROJECT.md)
 
 ## Build in GitHub Actions
 
@@ -48,8 +50,8 @@ Erwartete Artefakte nach erfolgreichem Lauf:
 - `provenance-manufacturer` / `provenance-personal` / `provenance-standard-default`: Revisionen, Submodule,
   Compiler, Python-Pakete, Buildlog und UF2-Prüfsumme.
 
-Die Artefakte werden erst durch einen erfolgreichen GitHub-Lauf erzeugt. Dieser
-Arbeitsstand enthält noch keine UF2. Der Workflow enthält keinen Flash-Schritt.
+Die Artefakte sind beim erfolgreichen Buildlauf auf GitHub verfügbar; lokal
+werden keine UF2-Dateien versioniert. Der Workflow enthält keinen Flash-Schritt.
 
 `standard` bezeichnet die Hardwarevariante; `default` und `studio` sind verschiedene
 Keymaps. Die originale `default`-Keymap aktiviert weder Vial noch die zusätzlichen
@@ -61,8 +63,9 @@ Die persönliche Portierung wird weiterhin auf Änderungen an Herstellerregeln,
 Identität, Geometrie und Speicherformat geprüft. Eine neue Commit-ID allein
 führt nicht zum Abbruch; relevante Herstelleränderungen können eine Anpassung
 der Portierung erfordern. Diese persönliche Prüfung blockiert die beiden
-unveränderten Herstellerbuilds nicht. Der Analysestand und das Quellenmanifest
-unter `sources/` dokumentieren weiterhin die ursprünglich untersuchte Revision.
+unveränderten Herstellerbuilds nicht. Die Quellenprüfung kontrolliert die
+Initialisierungshooks, deren Verkettung und Settings-IDs direkt im aktuellen
+Herstellercode. Ein Abgleich fester Quelldatei-Prüfsummen findet nicht mehr statt.
 
 ## Lokale Entwicklung
 
@@ -73,6 +76,7 @@ Der geprüfte Keebart-Checkout liegt aktuell unter
 
 ```sh
 python3 scripts/check_sources.py /private/tmp/corne-keebart-studio
+python3 tests/run.py /private/tmp/corne-keebart-studio
 ```
 
 Mit vorhandener QMK-Umgebung, im Keebart-Checkout:
@@ -82,37 +86,58 @@ export QMK_USERSPACE=/Users/basch/dev/corne-mx-studio_userspace
 qmk compile -kb keebart/corne_mx_pro/standard -km studio
 ```
 
-Der Quellchecker benötigt nur die Python-Standardbibliothek. Die
-Generierungsdateien werden aus dem versionierten ZMK-Snapshot erstellt:
+Die Belegung wird ab jetzt direkt in
+`keyboards/keebart/corne_mx_pro/keymaps/studio/keymap.c` gepflegt. Es gibt keinen
+Belegungsgenerator und keine separate aktive Bindungs-JSON. `layers.h` enthält
+die Layernamen; `defaults.c` initialisiert die Vial-Einstellungen und Tap Dances.
 
-```sh
-python3 scripts/generate_keymap.py
-```
+Nach einer Belegungsänderung Quellenprüfung und Hosttests ausführen. Die Tests
+kompilieren die echte Keymap mit Herstellerlayout und QMK-Keycodes und prüfen
+Layerzugänge, SYS-Aktionen und die aktuellen Tap-Dance-Bindings. Betroffene
+Erwartungen bei beauftragten Belegungsänderungen bewusst mit anpassen.
+Zusätzliche Sequenzen prüfen mit der echten QMK-Tapping-Engine Home Row Mods,
+Chordal Hold, Daumen-Ausnahmen, Layer-Tap, Quick Tap, Timer-Überlauf und
+persistiertes GUI-Timing. Speicher und die nachgelagerte Reportverarbeitung sind
+simuliert; der vollständige Firmware-Aufrufpfad bleibt außerhalb dieser Tests.
+Der Quellchecker braucht nur die Python-Standardbibliothek; die Hosttests zusätzlich
+`cc`. Die Matrix bleibt in vier physischen Zeilen mit 14 + 14 + 12 + 6 Argumenten.
 
-Anschließend Änderungen an Keymap und Mapping bewusst prüfen. Die zusätzlichen
-Tasten stehen explizit in `OVERRIDES`; neue ZMK-Behaviors führen zum Abbruch des
-Generators statt zu einer geratenen Umsetzung.
+Historische ZMK-Kopien und Portierungstabellen wurden entfernt. Die aktuelle
+Belegung steht ausschließlich in `keymap.c`; die verbleibende Dokumentation
+beschreibt Abweichungen, Initialisierung und Validierung.
 
-## Belegung und Zwischenlösungen
+## Belegung und Voreinstellungen
 
 Acht belegte Layer: `macos`, `num`, `sym`, `nav`, `win`, `short`, `numpad`, `sys`.
 Die 16 dynamischen Layer des Herstellers bleiben erhalten; 8–15 sind nicht mit
 einer persönlichen Belegung versehen. Positionen sind nullbasiert.
 
 - Linke Daumen: NAV/Escape, NUM/Backspace, WIN/Tab.
-- Rechte Daumen: NUMPAD/Enter, SYM/Space, momentaner SHORT-Layer.
-- SYS: äußere linke obere Taste halten; zusätzlich äußere rechte obere Taste
-  halten (Tap bleibt Backslash).
-- Hyper liegt außen links in der Home Row als reine Modifier-Taste.
-  Cmd+Space liegt auf derselben Position 14 im SHORT-Layer; Caps Word auf SHORT:0.
-  Ein kurzer Druck auf die Hyper-Taste allein sendet keinen Shortcut.
-- NUMPAD: Komma bleibt Position 38; separater Punkt auf Position 32.
+- Rechte Daumen: NUMPAD/Enter, SYM/Space, Tap Caps Word / Hold SHORT.
+- SYS: äußere linke obere Taste halten. Die rechte obere Außentaste sendet wie
+  im Vial-Projekt und ZMK-Original ausschließlich Backslash.
+- Außen links in der Home Row: Tap Cmd+Space / Hold Hyper, `TD(0)`.
+- Rechter äußerer Daumen: Tap Caps Word / Hold SHORT, `TD(1)`.
+- NUMPAD Position 38: Tap Komma / Hold Punkt, `TD(2)`.
+- SHORT Position 35: Assistant (`KC_ASST`); SYS Position 13: System Power
+  (`KC_PWR`). Beide sind bewusst andere HID-Aktionen als die früheren ZMK-Codes.
 - SYS: unten außen Neustart, daneben Bootloader, daneben EEPROM Clear –
   auf beiden Hälften. SYS muss bewusst gehalten werden. EEPROM Clear hat keine
   zusätzliche Haltefrist und wird bei Tastendruck ausgelöst.
 
-Die vorherigen kombinierten Sondertasten sind damit zunächst aufgeteilt.
-Studio bietet spätere Konfigurationsmöglichkeiten; siehe Abweichungsbericht.
+Die drei Tap Dances starten mit je 250 ms. Bei früher Unterbrechung entscheidet
+Studios Herstellerengine für Tap. Hyper und SHORT erst nach der Hold-Frist nutzen.
+Die globalen Mod-/Layer-Tap-Startwerte sind 250 ms, Permissive Hold und Chordal
+Hold an, Hold On Other Key Press aus. Das ist keine exakte ZMK-Flavor-Emulation.
+
+Die einmalige Initialisierung läuft nur auf dem USB-Master und setzt diese vier
+Einstellungen sowie TD-Slots 0–2, wenn die persönliche Studio-Kennung fehlt oder
+abweicht oder VIA seinen Speicher neu initialisiert hat. Dabei können auch
+bereits gespeicherte Werte in diesen vier Einstellungen und drei Slots ersetzt
+werden. Weitere Slots bleiben erhalten. Die Kennung wird erst nach erfolgreichen
+Schreibvorgängen gesetzt; normale Neustarts behalten spätere GUI-Änderungen.
+Quick Tap wird nicht separat gesetzt; bei frischem VIA-Speicher startet es mit
+250 ms. Vorhandene andere Quick-Tap-Werte bleiben erhalten.
 
 Vor einem späteren Flash ist eine getrennte Entscheidung erforderlich.
 Eine passende bestehende dynamische Keymap kann die einkompilierte Belegung
