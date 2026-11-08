@@ -64,7 +64,9 @@ Maßgebliche Datei: `.github/workflows/build.yml`.
 - Buildbefehl wie bei Keebart: `qmk mass-compile -j "$(nproc)"`, hier mit dem
   expliziten Ziel `"keebart/corne_mx_pro/standard:${BUILD_KEYMAP}"` pro Matrix-Job.
 - Actions auf Hauptversion referenzieren: `actions/checkout@v4` und
-  `actions/upload-artifact@v4`. Die vorherigen festen Action-Commit-Hashes wurden
+  `actions/upload-artifact@v7`. Die Upload-Action wurde auf Nutzerwunsch auf v7
+  aktualisiert; sie verwendet Node.js 24 und standardmäßig weiterhin ZIP-Archive.
+  Die vorherigen festen Action-Commit-Hashes wurden
   auf Nutzerwunsch durch dieses an Keebart angelehnte Schema ersetzt.
 - Der Buildcontainer bleibt wie im geprüften Keebart-Workflow per Digest fest:
   `ghcr.io/qmk/qmk_cli@sha256:2dc05fc9f32efebd6b05c2b8676ee548358bc7e151e9dbf4dac6b6eed4513b07`.
