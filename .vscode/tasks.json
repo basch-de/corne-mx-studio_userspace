@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Validate Studio sources",
+            "type": "process",
+            "command": "python3",
+            "args": ["scripts/check_sources.py", "${input:firmwarePath}"],
+            "problemMatcher": []
+        },
+        {
+            "label": "Build Studio UF2 (no flashing)",
+            "type": "process",
+            "command": "qmk",
+            "args": ["compile", "-kb", "keebart/corne_mx_pro/standard", "-km", "studio"],
+            "options": {
+                "cwd": "${input:firmwarePath}",
+                "env": {"QMK_USERSPACE": "${workspaceFolder}"}
+            },
+            "problemMatcher": ["$gcc"]
+        }
+    ],
+    "inputs": [
+        {
+            "id": "firmwarePath",
+            "type": "promptString",
+            "description": "Pfad zum Keebart-Checkout des Studio-Branches",
+            "default": "/private/tmp/corne-keebart-studio"
+        }
+    ]
+}

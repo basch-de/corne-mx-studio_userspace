@@ -1,0 +1,140 @@
+name: Build Corne MX Pro UF2
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: studio-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  firmware-revision:
+    name: Resolve current Keebart branch revision
+    runs-on: ubuntu-latest
+    outputs:
+      commit: ${{ steps.revision.outputs.commit }}
+    steps:
+      - name: Checkout current Keebart Studio branch
+        uses: actions/checkout@v4
+        with:
+          repository: Keebart/vial-qmk-keebart
+          ref: feature/keebart-studio-layer-rgb
+          persist-credentials: false
+
+      - name: Resolve shared firmware commit for this run
+        id: revision
+        run: |
+          echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  build:
+    name: ${{ matrix.variant }}
+    needs: firmware-revision
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    # Keep the audited build image fixed while following the firmware branch.
+    container: ghcr.io/qmk/qmk_cli@sha256:2dc05fc9f32efebd6b05c2b8676ee548358bc7e151e9dbf4dac6b6eed4513b07
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - variant: manufacturer
+            overlay: stock-userspace
+            keymap: studio
+            artifact: corne-mx-pro-studio-manufacturer
+          - variant: personal
+            overlay: userspace
+            keymap: studio
+            artifact: corne-mx-pro-studio-personal
+          - variant: standard-default
+            overlay: stock-userspace
+            keymap: default
+            artifact: corne-mx-pro-standard-default
+    env:
+      QMK_USERSPACE: ${{ github.workspace }}/${{ matrix.overlay }}
+      BUILD_KEYMAP: ${{ matrix.keymap }}
+    steps:
+      - name: Checkout userspace
+        uses: actions/checkout@v4
+        with:
+          path: userspace
+          persist-credentials: false
+
+      - name: Checkout shared Keebart Studio revision for this run
+        uses: actions/checkout@v4
+        with:
+          repository: Keebart/vial-qmk-keebart
+          # All variants use the same current branch commit resolved above.
+          ref: ${{ needs.firmware-revision.outputs.commit }}
+          path: firmware
+          submodules: recursive
+          persist-credentials: false
+
+      - name: Prepare independent manufacturer baseline
+        if: matrix.overlay == 'stock-userspace'
+        run: |
+          mkdir -p "$QMK_USERSPACE"
+          cp "$GITHUB_WORKSPACE/userspace/qmk.json" "$QMK_USERSPACE/qmk.json"
+
+      - name: Configure external userspace
+        working-directory: firmware
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE/firmware"
+          git config --global --add safe.directory "$GITHUB_WORKSPACE/userspace"
+          qmk config user.qmk_home="$GITHUB_WORKSPACE/firmware"
+          qmk config user.overlay_dir="$QMK_USERSPACE"
+
+      - name: Record provenance and validate userspace
+        working-directory: firmware
+        run: |
+          mkdir -p "$GITHUB_WORKSPACE/userspace/build-info"
+          git rev-parse HEAD > "$GITHUB_WORKSPACE/userspace/build-info/firmware-commit.txt"
+          git submodule status --recursive > "$GITHUB_WORKSPACE/userspace/build-info/submodules.txt"
+          git -C "$GITHUB_WORKSPACE/userspace" rev-parse HEAD > "$GITHUB_WORKSPACE/userspace/build-info/userspace-commit.txt"
+          arm-none-eabi-gcc --version > "$GITHUB_WORKSPACE/userspace/build-info/compiler.txt"
+          pip freeze > "$GITHUB_WORKSPACE/userspace/build-info/python-packages.txt"
+          qmk userspace-doctor
+
+      - name: Validate personal keymap compatibility with current firmware
+        if: matrix.variant == 'personal'
+        working-directory: firmware
+        run: python3 "$GITHUB_WORKSPACE/userspace/scripts/check_sources.py" .
+
+      - name: Compile UF2 without device access
+        working-directory: firmware
+        shell: bash
+        run: |
+          set -o pipefail
+          if ! qmk mass-compile -j "$(nproc)" "keebart/corne_mx_pro/standard:${BUILD_KEYMAP}" 2>&1 | tee "$GITHUB_WORKSPACE/userspace/build-info/build.log"; then
+            for log in .build/failed.log.*; do
+              [ -f "$log" ] || continue
+              cp "$log" "$GITHUB_WORKSPACE/userspace/build-info/"
+              cat "$log"
+            done
+            echo "::error::Firmware build failed. Inspect build.log and failed.log artifacts."
+            exit 1
+          fi
+          if ! compgen -G "$QMK_USERSPACE/*_${BUILD_KEYMAP}.uf2" > /dev/null; then
+            echo "::error::Build produced no UF2 in the external userspace. Inspect build.log."
+            exit 1
+          fi
+          sha256sum "$QMK_USERSPACE/"*"_${BUILD_KEYMAP}.uf2" > "$GITHUB_WORKSPACE/userspace/build-info/uf2-sha256.txt"
+
+      - name: Upload UF2
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: ${{ github.workspace }}/${{ matrix.overlay }}/*_${{ matrix.keymap }}.uf2
+          if-no-files-found: error
+
+      - name: Upload provenance and compiler log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: provenance-${{ matrix.variant }}
+          path: userspace/build-info/
+          if-no-files-found: warn

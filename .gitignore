@@ -1,0 +1,8 @@
+*.uf2
+*.bin
+*.hex
+*.elf
+.build/
+build-info/
+__pycache__/
+.DS_Store

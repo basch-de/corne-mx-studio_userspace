@@ -1,0 +1,2946 @@
+[
+  {
+    "layer": "macos",
+    "position": 0,
+    "zmk": "&hlt SYS GRAVE",
+    "qmk": "LT(SYS, KC_GRV)",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 1,
+    "zmk": "&kp Q",
+    "qmk": "KC_Q",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 2,
+    "zmk": "&kp W",
+    "qmk": "KC_W",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 3,
+    "zmk": "&kp E",
+    "qmk": "KC_E",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 4,
+    "zmk": "&kp R",
+    "qmk": "KC_R",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 5,
+    "zmk": "&kp T",
+    "qmk": "KC_T",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 6,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 7,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 8,
+    "zmk": "&kp Y",
+    "qmk": "KC_Y",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 9,
+    "zmk": "&kp U",
+    "qmk": "KC_U",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 10,
+    "zmk": "&kp I",
+    "qmk": "KC_I",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 11,
+    "zmk": "&kp O",
+    "qmk": "KC_O",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 12,
+    "zmk": "&kp P",
+    "qmk": "KC_P",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 13,
+    "zmk": "&kp BSLH",
+    "qmk": "LT(SYS, KC_BSLS)",
+    "status": "documented-addition",
+    "note": "Right-hand SYS entry; tap remains backslash"
+  },
+  {
+    "layer": "macos",
+    "position": 14,
+    "zmk": "&mt LA(LC(LG(LSHFT))) LG(SPACE)",
+    "qmk": "KC_HYPR",
+    "status": "split-interim",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 15,
+    "zmk": "&hml LCTRL A",
+    "qmk": "MT(MOD_LCTL, KC_A)",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 16,
+    "zmk": "&hml LGUI S",
+    "qmk": "MT(MOD_LGUI, KC_S)",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 17,
+    "zmk": "&hml LALT D",
+    "qmk": "MT(MOD_LALT, KC_D)",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 18,
+    "zmk": "&hml LSHFT F",
+    "qmk": "MT(MOD_LSFT, KC_F)",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 19,
+    "zmk": "&kp G",
+    "qmk": "KC_G",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 20,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 21,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 22,
+    "zmk": "&kp H",
+    "qmk": "KC_H",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 23,
+    "zmk": "&hmr RSHFT J",
+    "qmk": "MT(MOD_RSFT, KC_J)",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 24,
+    "zmk": "&hmr RALT K",
+    "qmk": "MT(MOD_RALT, KC_K)",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 25,
+    "zmk": "&hmr RGUI L",
+    "qmk": "MT(MOD_RGUI, KC_L)",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 26,
+    "zmk": "&hmr RCTRL SEMI",
+    "qmk": "MT(MOD_RCTL, KC_SCLN)",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 27,
+    "zmk": "&mt LA(LC(LSHFT)) SQT",
+    "qmk": "MEH_T(KC_QUOT)",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 28,
+    "zmk": "&lt SHORT EQUAL",
+    "qmk": "LT(SHORT, KC_EQL)",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 29,
+    "zmk": "&kp Z",
+    "qmk": "KC_Z",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 30,
+    "zmk": "&kp X",
+    "qmk": "KC_X",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 31,
+    "zmk": "&kp C",
+    "qmk": "KC_C",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 32,
+    "zmk": "&kp V",
+    "qmk": "KC_V",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 33,
+    "zmk": "&kp B",
+    "qmk": "KC_B",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 34,
+    "zmk": "&kp N",
+    "qmk": "KC_N",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 35,
+    "zmk": "&kp M",
+    "qmk": "KC_M",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 36,
+    "zmk": "&kp COMMA",
+    "qmk": "KC_COMM",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 37,
+    "zmk": "&kp DOT",
+    "qmk": "KC_DOT",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 38,
+    "zmk": "&kp FSLH",
+    "qmk": "KC_SLSH",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 39,
+    "zmk": "&kp MINUS",
+    "qmk": "KC_MINS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 40,
+    "zmk": "&hlt NAV ESC",
+    "qmk": "LT(NAV, KC_ESC)",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 41,
+    "zmk": "&hlt NUM BSPC",
+    "qmk": "LT(NUM, KC_BSPC)",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 42,
+    "zmk": "&rhlt WIN TAB",
+    "qmk": "LT(WIN, KC_TAB)",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 43,
+    "zmk": "&rlt NUMPAD RET",
+    "qmk": "LT(NUMPAD, KC_ENT)",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 44,
+    "zmk": "&hlt SYM SPACE",
+    "qmk": "LT(SYM, KC_SPC)",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "macos",
+    "position": 45,
+    "zmk": "&lcw SHORT 0",
+    "qmk": "MO(SHORT)",
+    "status": "split-interim",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 0,
+    "zmk": "&kp COMMA",
+    "qmk": "KC_COMM",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 1,
+    "zmk": "&kp N1",
+    "qmk": "KC_1",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 2,
+    "zmk": "&kp N2",
+    "qmk": "KC_2",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 3,
+    "zmk": "&kp N3",
+    "qmk": "KC_3",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 4,
+    "zmk": "&kp N4",
+    "qmk": "KC_4",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 5,
+    "zmk": "&kp N5",
+    "qmk": "KC_5",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 6,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 7,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 8,
+    "zmk": "&kp N6",
+    "qmk": "KC_6",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 9,
+    "zmk": "&kp N7",
+    "qmk": "KC_7",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 10,
+    "zmk": "&kp N8",
+    "qmk": "KC_8",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 11,
+    "zmk": "&kp N9",
+    "qmk": "KC_9",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 12,
+    "zmk": "&kp N0",
+    "qmk": "KC_0",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 13,
+    "zmk": "&kp BSPC",
+    "qmk": "KC_BSPC",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 14,
+    "zmk": "&kp FSLH",
+    "qmk": "KC_SLSH",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 15,
+    "zmk": "&kp LCTRL",
+    "qmk": "KC_LCTL",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 16,
+    "zmk": "&kp LGUI",
+    "qmk": "KC_LGUI",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 17,
+    "zmk": "&kp LALT",
+    "qmk": "KC_LALT",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 18,
+    "zmk": "&kp LSHFT",
+    "qmk": "KC_LSFT",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 19,
+    "zmk": "&kp MINUS",
+    "qmk": "KC_MINS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 20,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 21,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 22,
+    "zmk": "&kp COLON",
+    "qmk": "KC_COLN",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 23,
+    "zmk": "&kp LEFT",
+    "qmk": "KC_LEFT",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 24,
+    "zmk": "&kp DOWN",
+    "qmk": "KC_DOWN",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 25,
+    "zmk": "&kp UP",
+    "qmk": "KC_UP",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 26,
+    "zmk": "&kp RIGHT",
+    "qmk": "KC_RIGHT",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 27,
+    "zmk": "&kp DOT",
+    "qmk": "KC_DOT",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 28,
+    "zmk": "&kp F12",
+    "qmk": "KC_F12",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 29,
+    "zmk": "&kp F1",
+    "qmk": "KC_F1",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 30,
+    "zmk": "&kp F2",
+    "qmk": "KC_F2",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 31,
+    "zmk": "&kp F3",
+    "qmk": "KC_F3",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 32,
+    "zmk": "&kp F4",
+    "qmk": "KC_F4",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 33,
+    "zmk": "&kp F5",
+    "qmk": "KC_F5",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 34,
+    "zmk": "&kp F6",
+    "qmk": "KC_F6",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 35,
+    "zmk": "&kp F7",
+    "qmk": "KC_F7",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 36,
+    "zmk": "&kp F8",
+    "qmk": "KC_F8",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 37,
+    "zmk": "&kp F9",
+    "qmk": "KC_F9",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 38,
+    "zmk": "&kp F10",
+    "qmk": "KC_F10",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 39,
+    "zmk": "&kp F11",
+    "qmk": "KC_F11",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 40,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 41,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 42,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 43,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 44,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "num",
+    "position": 45,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 0,
+    "zmk": "&kp GRAVE",
+    "qmk": "KC_GRV",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 1,
+    "zmk": "&kp EXCL",
+    "qmk": "KC_EXLM",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 2,
+    "zmk": "&kp AT",
+    "qmk": "KC_AT",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 3,
+    "zmk": "&kp HASH",
+    "qmk": "KC_HASH",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 4,
+    "zmk": "&kp DLLR",
+    "qmk": "KC_DLR",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 5,
+    "zmk": "&kp PRCNT",
+    "qmk": "KC_PERC",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 6,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 7,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 8,
+    "zmk": "&kp CARET",
+    "qmk": "KC_CIRC",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 9,
+    "zmk": "&kp AMPS",
+    "qmk": "KC_AMPR",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 10,
+    "zmk": "&kp ASTRK",
+    "qmk": "KC_ASTR",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 11,
+    "zmk": "&kp LPAR",
+    "qmk": "KC_LPRN",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 12,
+    "zmk": "&kp RPAR",
+    "qmk": "KC_RPRN",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 13,
+    "zmk": "&kp BSPC",
+    "qmk": "KC_BSPC",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 14,
+    "zmk": "&kp TILDE",
+    "qmk": "KC_TILD",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 15,
+    "zmk": "&kp LCTRL",
+    "qmk": "KC_LCTL",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 16,
+    "zmk": "&kp LGUI",
+    "qmk": "KC_LGUI",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 17,
+    "zmk": "&kp LALT",
+    "qmk": "KC_LALT",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 18,
+    "zmk": "&kp LSHFT",
+    "qmk": "KC_LSFT",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 19,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 20,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 21,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 22,
+    "zmk": "&kp MINUS",
+    "qmk": "KC_MINS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 23,
+    "zmk": "&kp FSLH",
+    "qmk": "KC_SLSH",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 24,
+    "zmk": "&kp LBKT",
+    "qmk": "KC_LBRC",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 25,
+    "zmk": "&kp RBKT",
+    "qmk": "KC_RBRC",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 26,
+    "zmk": "&kp BSLH",
+    "qmk": "KC_BSLS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 27,
+    "zmk": "&kp EQUAL",
+    "qmk": "KC_EQL",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 28,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 29,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 30,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 31,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 32,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 33,
+    "zmk": "&tog NUMPAD",
+    "qmk": "TG(NUMPAD)",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 34,
+    "zmk": "&kp UNDER",
+    "qmk": "KC_UNDS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 35,
+    "zmk": "&kp QMARK",
+    "qmk": "KC_QUES",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 36,
+    "zmk": "&kp LBRC",
+    "qmk": "KC_LCBR",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 37,
+    "zmk": "&kp RBRC",
+    "qmk": "KC_RCBR",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 38,
+    "zmk": "&kp PIPE",
+    "qmk": "KC_PIPE",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 39,
+    "zmk": "&kp PLUS",
+    "qmk": "KC_PLUS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 40,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 41,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 42,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 43,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 44,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sym",
+    "position": 45,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 0,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 1,
+    "zmk": "&kp LG(W)",
+    "qmk": "LGUI(KC_W)",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 2,
+    "zmk": "&kp LA(LG(LEFT))",
+    "qmk": "LALT(LGUI(KC_LEFT))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 3,
+    "zmk": "&kp LG(T)",
+    "qmk": "LGUI(KC_T)",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 4,
+    "zmk": "&kp LA(LG(RIGHT))",
+    "qmk": "LALT(LGUI(KC_RIGHT))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 5,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 6,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 7,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 8,
+    "zmk": "&kp PG_UP",
+    "qmk": "KC_PGUP",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 9,
+    "zmk": "&kp LG(LEFT)",
+    "qmk": "LGUI(KC_LEFT)",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 10,
+    "zmk": "&kp LG(RIGHT)",
+    "qmk": "LGUI(KC_RIGHT)",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 11,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 12,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 13,
+    "zmk": "&kp DEL",
+    "qmk": "KC_DEL",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 14,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 15,
+    "zmk": "&kp LCTRL",
+    "qmk": "KC_LCTL",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 16,
+    "zmk": "&kp LGUI",
+    "qmk": "KC_LGUI",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 17,
+    "zmk": "&kp LALT",
+    "qmk": "KC_LALT",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 18,
+    "zmk": "&kp LSHFT",
+    "qmk": "KC_LSFT",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 19,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 20,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 21,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 22,
+    "zmk": "&kp PG_DN",
+    "qmk": "KC_PGDN",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 23,
+    "zmk": "&kp LEFT",
+    "qmk": "KC_LEFT",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 24,
+    "zmk": "&kp DOWN",
+    "qmk": "KC_DOWN",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 25,
+    "zmk": "&kp UP",
+    "qmk": "KC_UP",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 26,
+    "zmk": "&kp RIGHT",
+    "qmk": "KC_RIGHT",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 27,
+    "zmk": "&kp BSPC",
+    "qmk": "KC_BSPC",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 28,
+    "zmk": "&kp LS(LG(Z))",
+    "qmk": "LSFT(LGUI(KC_Z))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 29,
+    "zmk": "&kp LG(Z)",
+    "qmk": "LGUI(KC_Z)",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 30,
+    "zmk": "&kp LG(X)",
+    "qmk": "LGUI(KC_X)",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 31,
+    "zmk": "&kp LG(C)",
+    "qmk": "LGUI(KC_C)",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 32,
+    "zmk": "&kp LG(V)",
+    "qmk": "LGUI(KC_V)",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 33,
+    "zmk": "&kp SPACE",
+    "qmk": "KC_SPC",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 34,
+    "zmk": "&kp LG(A)",
+    "qmk": "LGUI(KC_A)",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 35,
+    "zmk": "&kp LS(LA(LEFT))",
+    "qmk": "LSFT(LALT(KC_LEFT))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 36,
+    "zmk": "&kp LA(LEFT)",
+    "qmk": "LALT(KC_LEFT)",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 37,
+    "zmk": "&kp LA(RIGHT)",
+    "qmk": "LALT(KC_RIGHT)",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 38,
+    "zmk": "&kp LS(LA(RIGHT))",
+    "qmk": "LSFT(LALT(KC_RIGHT))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 39,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 40,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 41,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 42,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 43,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 44,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "nav",
+    "position": 45,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 0,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 1,
+    "zmk": "&kp LC(LA(D))",
+    "qmk": "LCTL(LALT(KC_D))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 2,
+    "zmk": "&kp LC(LA(F))",
+    "qmk": "LCTL(LALT(KC_F))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 3,
+    "zmk": "&kp LC(LA(G))",
+    "qmk": "LCTL(LALT(KC_G))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 4,
+    "zmk": "&kp LC(LA(U))",
+    "qmk": "LCTL(LALT(KC_U))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 5,
+    "zmk": "&kp LC(LA(I))",
+    "qmk": "LCTL(LALT(KC_I))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 6,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 7,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 8,
+    "zmk": "&kp LC(LA(U))",
+    "qmk": "LCTL(LALT(KC_U))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 9,
+    "zmk": "&kp LC(LA(I))",
+    "qmk": "LCTL(LALT(KC_I))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 10,
+    "zmk": "&kp LC(LA(D))",
+    "qmk": "LCTL(LALT(KC_D))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 11,
+    "zmk": "&kp LC(LA(F))",
+    "qmk": "LCTL(LALT(KC_F))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 12,
+    "zmk": "&kp LC(LA(G))",
+    "qmk": "LCTL(LALT(KC_G))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 13,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 14,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 15,
+    "zmk": "&kp LC(LA(LEFT))",
+    "qmk": "LCTL(LALT(KC_LEFT))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 16,
+    "zmk": "&kp LC(LA(DOWN))",
+    "qmk": "LCTL(LALT(KC_DOWN))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 17,
+    "zmk": "&kp LC(LA(UP))",
+    "qmk": "LCTL(LALT(KC_UP))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 18,
+    "zmk": "&kp LC(LA(RIGHT))",
+    "qmk": "LCTL(LALT(KC_RIGHT))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 19,
+    "zmk": "&kp LC(LA(RET))",
+    "qmk": "LCTL(LALT(KC_ENT))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 20,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 21,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 22,
+    "zmk": "&kp LC(LA(RET))",
+    "qmk": "LCTL(LALT(KC_ENT))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 23,
+    "zmk": "&kp LC(LA(LEFT))",
+    "qmk": "LCTL(LALT(KC_LEFT))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 24,
+    "zmk": "&kp LC(LA(DOWN))",
+    "qmk": "LCTL(LALT(KC_DOWN))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 25,
+    "zmk": "&kp LC(LA(UP))",
+    "qmk": "LCTL(LALT(KC_UP))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 26,
+    "zmk": "&kp LC(LA(RIGHT))",
+    "qmk": "LCTL(LALT(KC_RIGHT))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 27,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 28,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 29,
+    "zmk": "&kp LC(LA(E))",
+    "qmk": "LCTL(LALT(KC_E))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 30,
+    "zmk": "&kp LC(LA(R))",
+    "qmk": "LCTL(LALT(KC_R))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 31,
+    "zmk": "&kp LC(LA(T))",
+    "qmk": "LCTL(LALT(KC_T))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 32,
+    "zmk": "&kp LC(LA(J))",
+    "qmk": "LCTL(LALT(KC_J))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 33,
+    "zmk": "&kp LC(LA(K))",
+    "qmk": "LCTL(LALT(KC_K))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 34,
+    "zmk": "&kp LC(LA(J))",
+    "qmk": "LCTL(LALT(KC_J))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 35,
+    "zmk": "&kp LC(LA(K))",
+    "qmk": "LCTL(LALT(KC_K))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 36,
+    "zmk": "&kp LC(LA(E))",
+    "qmk": "LCTL(LALT(KC_E))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 37,
+    "zmk": "&kp LC(LA(R))",
+    "qmk": "LCTL(LALT(KC_R))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 38,
+    "zmk": "&kp LC(LA(T))",
+    "qmk": "LCTL(LALT(KC_T))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 39,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 40,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 41,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 42,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 43,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 44,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "win",
+    "position": 45,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 0,
+    "zmk": "&none",
+    "qmk": "CW_TOGG",
+    "status": "documented-addition",
+    "note": "Separate Caps Word toggle"
+  },
+  {
+    "layer": "short",
+    "position": 1,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 2,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 3,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 4,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 5,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 6,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 7,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 8,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 9,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 10,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 11,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 12,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 13,
+    "zmk": "&kp LC(LG(Q))",
+    "qmk": "LCTL(LGUI(KC_Q))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 14,
+    "zmk": "&none",
+    "qmk": "LGUI(KC_SPC)",
+    "status": "documented-addition",
+    "note": "Separate Cmd+Space shortcut; base position holds Hyper"
+  },
+  {
+    "layer": "short",
+    "position": 15,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 16,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 17,
+    "zmk": "&kp LS(LG(N4))",
+    "qmk": "LSFT(LGUI(KC_4))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 18,
+    "zmk": "&kp LC(LS(LG(N4)))",
+    "qmk": "LCTL(LSFT(LGUI(KC_4)))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 19,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 20,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 21,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 22,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 23,
+    "zmk": "&kp C_VOL_DN",
+    "qmk": "KC_VOLD",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 24,
+    "zmk": "&kp C_MUTE",
+    "qmk": "KC_MUTE",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 25,
+    "zmk": "&kp C_VOL_UP",
+    "qmk": "KC_VOLU",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 26,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 27,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 28,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 29,
+    "zmk": "&kp LS(LG(O))",
+    "qmk": "LSFT(LGUI(KC_O))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 30,
+    "zmk": "&kp LS(LG(M))",
+    "qmk": "LSFT(LGUI(KC_M))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 31,
+    "zmk": "&kp LS(LG(K))",
+    "qmk": "LSFT(LGUI(KC_K))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 32,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 33,
+    "zmk": "&kp LS(LG(H))",
+    "qmk": "LSFT(LGUI(KC_H))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 34,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 35,
+    "zmk": "&kp C_VOICE_COMMAND",
+    "qmk": "KC_NO",
+    "status": "unsupported-hid-usage",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 36,
+    "zmk": "&kp LC(LG(SPACE))",
+    "qmk": "LCTL(LGUI(KC_SPC))",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 37,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 38,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 39,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 40,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 41,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 42,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 43,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 44,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "short",
+    "position": 45,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 0,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 1,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 2,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 3,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 4,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 5,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 6,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 7,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 8,
+    "zmk": "&kp FSLH",
+    "qmk": "KC_SLSH",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 9,
+    "zmk": "&kp N7",
+    "qmk": "KC_7",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 10,
+    "zmk": "&kp N8",
+    "qmk": "KC_8",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 11,
+    "zmk": "&kp N9",
+    "qmk": "KC_9",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 12,
+    "zmk": "&kp MINUS",
+    "qmk": "KC_MINS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 13,
+    "zmk": "&kp EQUAL",
+    "qmk": "KC_EQL",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 14,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 15,
+    "zmk": "&kp LCTRL",
+    "qmk": "KC_LCTL",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 16,
+    "zmk": "&kp LGUI",
+    "qmk": "KC_LGUI",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 17,
+    "zmk": "&kp LALT",
+    "qmk": "KC_LALT",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 18,
+    "zmk": "&kp LSHFT",
+    "qmk": "KC_LSFT",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 19,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 20,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 21,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 22,
+    "zmk": "&kp ASTRK",
+    "qmk": "KC_ASTR",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 23,
+    "zmk": "&kp N4",
+    "qmk": "KC_4",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 24,
+    "zmk": "&kp N5",
+    "qmk": "KC_5",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 25,
+    "zmk": "&kp N6",
+    "qmk": "KC_6",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 26,
+    "zmk": "&kp PLUS",
+    "qmk": "KC_PLUS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 27,
+    "zmk": "&kp RET",
+    "qmk": "KC_ENT",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 28,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 29,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 30,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 31,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 32,
+    "zmk": "&none",
+    "qmk": "KC_DOT",
+    "status": "documented-addition",
+    "note": "Separate dot beside the existing NUMPAD toggle"
+  },
+  {
+    "layer": "numpad",
+    "position": 33,
+    "zmk": "&tog NUMPAD",
+    "qmk": "TG(NUMPAD)",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 34,
+    "zmk": "&kp N0",
+    "qmk": "KC_0",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 35,
+    "zmk": "&kp N1",
+    "qmk": "KC_1",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 36,
+    "zmk": "&kp N2",
+    "qmk": "KC_2",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 37,
+    "zmk": "&kp N3",
+    "qmk": "KC_3",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 38,
+    "zmk": "&mt DOT COMMA",
+    "qmk": "KC_COMM",
+    "status": "split-interim",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 39,
+    "zmk": "&kp LS(SEMI)",
+    "qmk": "LSFT(KC_SCLN)",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 40,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 41,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 42,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 43,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 44,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "numpad",
+    "position": 45,
+    "zmk": "&trans",
+    "qmk": "KC_TRNS",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 0,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 1,
+    "zmk": "&bt BT_SEL 0",
+    "qmk": "KC_NO",
+    "status": "omitted-platform-specific",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 2,
+    "zmk": "&bt BT_SEL 1",
+    "qmk": "KC_NO",
+    "status": "omitted-platform-specific",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 3,
+    "zmk": "&bt BT_SEL 2",
+    "qmk": "KC_NO",
+    "status": "omitted-platform-specific",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 4,
+    "zmk": "&bt BT_SEL 3",
+    "qmk": "KC_NO",
+    "status": "omitted-platform-specific",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 5,
+    "zmk": "&bt BT_SEL 4",
+    "qmk": "KC_NO",
+    "status": "omitted-platform-specific",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 6,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 7,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 8,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 9,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 10,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 11,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 12,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 13,
+    "zmk": "&kp C_PWR",
+    "qmk": "KC_NO",
+    "status": "unsupported-hid-usage",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 14,
+    "zmk": "&bt BT_CLR",
+    "qmk": "KC_NO",
+    "status": "omitted-platform-specific",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 15,
+    "zmk": "&ext_power EP_TOG",
+    "qmk": "KC_NO",
+    "status": "omitted-platform-specific",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 16,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 17,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 18,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 19,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 20,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 21,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 22,
+    "zmk": "&rgb_ug RGB_HUD",
+    "qmk": "RM_HUED",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 23,
+    "zmk": "&rgb_ug RGB_HUI",
+    "qmk": "RM_HUEU",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 24,
+    "zmk": "&rgb_ug RGB_SAD",
+    "qmk": "RM_SATD",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 25,
+    "zmk": "&rgb_ug RGB_SAI",
+    "qmk": "RM_SATU",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 26,
+    "zmk": "&rgb_ug RGB_BRD",
+    "qmk": "RM_VALD",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 27,
+    "zmk": "&rgb_ug RGB_BRI",
+    "qmk": "RM_VALU",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 28,
+    "zmk": "&sys_reset",
+    "qmk": "QK_RBT",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 29,
+    "zmk": "&bootloader",
+    "qmk": "QK_BOOT",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 30,
+    "zmk": "&none",
+    "qmk": "EE_CLR",
+    "status": "documented-addition",
+    "note": "Left EEPROM clear behind held SYS"
+  },
+  {
+    "layer": "sys",
+    "position": 31,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 32,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 33,
+    "zmk": "&studio_unlock",
+    "qmk": "KC_NO",
+    "status": "omitted-platform-specific",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 34,
+    "zmk": "&rgb_ug RGB_TOG",
+    "qmk": "RM_TOGG",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 35,
+    "zmk": "&rgb_ug RGB_EFF",
+    "qmk": "RM_NEXT",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 36,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 37,
+    "zmk": "&none",
+    "qmk": "EE_CLR",
+    "status": "documented-addition",
+    "note": "Right EEPROM clear behind held SYS"
+  },
+  {
+    "layer": "sys",
+    "position": 38,
+    "zmk": "&bootloader",
+    "qmk": "QK_BOOT",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 39,
+    "zmk": "&sys_reset",
+    "qmk": "QK_RBT",
+    "status": "approximate",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 40,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 41,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 42,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 43,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 44,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  },
+  {
+    "layer": "sys",
+    "position": 45,
+    "zmk": "&none",
+    "qmk": "KC_NO",
+    "status": "direct",
+    "note": ""
+  }
+]
