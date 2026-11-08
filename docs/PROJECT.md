@@ -170,8 +170,15 @@ Eine spätere Zustimmung gilt nur für die einzeln benannte Änderung.
 
 ## Validierungsstand
 
-Stand 08.11.2026: **aktueller Arbeitsstand mit Quellenprüfung und 38 Hosttests
-geprüft; neuer ARM-/UF2-Build und Hardware-/GUI-Tests offen**.
+Stand 08.11.2026: **Quellenprüfung und 38 Hosttests bestanden; der erfolgreiche
+Firmwarebuild nach den letzten Änderungen wurde vom Nutzer bestätigt.
+Hardware-/GUI-Tests bleiben offen**.
+
+Die Buildbestätigung erfolgte nach der Übernahme der zusätzlichen Tapping-Tests.
+Lauf-ID, tatsächlich gebaute Userspace-/Firmware-Revisionen, einzelne Jobs und
+Artefakte dieses neuen Builds wurden noch nicht separat abgeglichen. Die
+folgenden API-geprüften Angaben beziehen sich ausschließlich auf den älteren
+Build #1 und sind kein Detailnachweis für den neu gemeldeten Lauf.
 
 [Build #1, Versuch 1](https://github.com/basch-de/corne-mx-studio_userspace/actions/runs/42480355588)
 war laut GitHub Actions erfolgreich, für Userspace-Commit

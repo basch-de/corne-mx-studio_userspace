@@ -224,8 +224,12 @@ Maßgebliche Datei: `.github/workflows/build.yml`.
   Hardware-/GUI-Validierung bleibt offen; kein Flash oder EEPROM-Reset erfolgt.
   Nach diesem Build wurden MACOS:13 auf reines Backslash zurückgestellt und
   die Vial-gleichen Tasten samt Initialisierung ergänzt. Quellenprüfung und
-  38 Hosttests bestehen; dieser neue Stand benötigt einen neuen Firmware-Build.
-  Details und Lauf-Link in `docs/PROJECT.md`. Zukünftige Firmwareänderungen
+  38 Hosttests bestehen. Anschließend hat der Nutzer am 08.11.2026 den
+  erfolgreichen Firmwarebuild nach den letzten Änderungen bestätigt. Diesen
+  Build nicht weiter als ausstehend führen; Lauf-ID, gebaute Revisionen,
+  einzelne Jobs und Artefakte wurden für den neuen Lauf noch nicht separat
+  abgeglichen. Hardware-/GUI-Validierung bleibt offen.
+  Details und historischer Lauf-Link in `docs/PROJECT.md`. Zukünftige Firmwareänderungen
   nicht mit diesem älteren Lauf als buildgeprüft ausgeben. Die lokale
   Buildwerkzeug-Installation wurde abgelehnt; eine eingerichtete lokale
   Toolchain nicht voraussetzen.

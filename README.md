@@ -9,16 +9,13 @@ Vial-Einstellungen und drei dynamische Tap Dances. Record- und Timing-Hooks
 sowie Hardware und QMK-Kern werden nicht ersetzt. Die Keymap heißt **`studio`**, weil der Hersteller
 mehrere Funktionen ausschließlich für diesen Namen einkompiliert.
 
-Stand 08.11.2026: **Alle drei Firmwarevarianten erfolgreich in GitHub Actions
-kompiliert; Hardware- und GUI-Tests stehen noch aus.**
-[Build #1](https://github.com/basch-de/corne-mx-studio_userspace/actions/runs/42480355588)
-lief für Userspace-Commit `bbf0e5e465c5394b94cc69a25f46160aa842537b` erfolgreich.
-Die drei UF2-Artefakte und drei Buildnachweise wurden hochgeladen. Es wurde
-keine Firmware auf die Tastatur übertragen und kein EEPROM-Reset durchgeführt.
-Danach wurden die rechte obere Außentaste auf Backslash zurückgestellt und die
-fehlenden Vial-Tasten samt Initialisierung übernommen. Für diesen aktuellen
-Stand bestehen Quellenprüfung und 38 Hosttests mit Keebarts Studio- und QMK-Tapping-Engine;
-ein neuer vollständiger Firmware-Build ist noch erforderlich.
+Stand 08.11.2026: **Der Nutzer hat den erfolgreichen Firmwarebuild nach den
+letzten Änderungen bestätigt. Hardware- und GUI-Tests stehen noch aus.**
+Quellenprüfung und 38 Hosttests mit Keebarts Studio- und QMK-Tapping-Engine
+bestehen ebenfalls. Lauf-ID, gebaute Revisionen und Artefakte des neuen Builds
+wurden noch nicht separat abgeglichen; der ältere API-geprüfte Build #1 ist in
+den technischen Hinweisen dokumentiert. Es wurde durch den Agenten keine
+Firmware übertragen und kein EEPROM-Reset durchgeführt.
 
 - [Technische Hinweise, Initialisierung, Abweichungen und Prüfstand](docs/PROJECT.md)
 
